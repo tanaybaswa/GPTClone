@@ -92,7 +92,9 @@ const handleSubmit = async (e) => {
     },
   };
 
-  const response = await fetch(`http://localhost:5000?prompt=${PROMPT}`, request);
+  const url = `https://leokamikazegpt.onrender.com?prompt=${PROMPT}`;
+
+  const response = await fetch(url, request);
 
   console.log(PROMPT);
   console.log(request);
