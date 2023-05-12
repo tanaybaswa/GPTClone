@@ -52,7 +52,7 @@ const chatStripe = (isAi, value='', uId=0) => {
     <div class="wrapper ${isAi && 'ai'}">
       <div class="chat">
         <div class="profile">
-          <img src="${isAi? './assets/bot.svg':'./assets/user.svg'}" 
+          <img src="${isAi? bot: user}" 
           alt="${isAi? 'AI' : 'user'}">
         </div>
         <div class="message" id="${uId}">${value}</div>
@@ -93,6 +93,7 @@ const handleSubmit = async (e) => {
   };
 
   const url = `https://leokamikazegpt.onrender.com?prompt=${PROMPT}`;
+  const url2 = `http://localhost:5000?prompt=${PROMPT}`;
 
   const response = await fetch(url, request);
 
